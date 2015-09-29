@@ -41,7 +41,9 @@
         }, function(err, mobileconfig) {
           var openssl;
           console.log(mobileconfig);
-          openssl = child_process.execFile('openssl', ['smime', '-sign', '-signer', 'railgun.ac.crt', '-inkey', 'railgun.ac.key', '-certfile', 'intermediate_domain_ca.crt', '-nodetach', '-outform', 'der'], function(error, stdout, stderr) {
+          openssl = child_process.execFile('openssl', ['smime', '-sign', '-signer', 'railgun.ac.crt', '-inkey', 'railgun.ac.key', '-certfile', 'intermediate_domain_ca.crt', '-nodetach', '-outform', 'der'], {
+            encoding: 'buffer'
+          }, function(error, stdout, stderr) {
             if (err) {
               return res.status(500).send(err);
             }

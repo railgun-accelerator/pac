@@ -22,7 +22,7 @@ app.get /([a-z])(\d+)(-[-\w]*)?(\..+)?/, (req, res) ->
         template = 'ios'
       app.render template, username: params[1], password: req.params[1], host: domain, (err, mobileconfig)->
         console.log mobileconfig
-        openssl = child_process.execFile 'openssl', ['smime', '-sign', '-signer', 'railgun.ac.crt', '-inkey', 'railgun.ac.key', '-certfile', 'intermediate_domain_ca.crt', '-nodetach', '-outform', 'der'], (error, stdout, stderr)->
+        openssl = child_process.execFile 'openssl', ['smime', '-sign', '-signer', 'railgun.ac.crt', '-inkey', 'railgun.ac.key', '-certfile', 'intermediate_domain_ca.crt', '-nodetach', '-outform', 'der'], encoding: 'buffer', (error, stdout, stderr)->
           if err
             return res.status(500).send(err)
           if stderr.length > 0
