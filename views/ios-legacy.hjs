@@ -12,7 +12,7 @@
 				<key>LocalIdentifierType</key>
 				<string>KeyID</string>
 				<key>RemoteAddress</key>
-				<string>h.lv5.ac</string>
+				<string>{{host}}</string>
 				<key>SharedSecret</key>
 				<data>
 				cmFpbGd1bg==
