@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>IPSec</key>
+			<dict>
+				<key>AuthenticationMethod</key>
+				<string>SharedSecret</string>
+				<key>LocalIdentifierType</key>
+				<string>KeyID</string>
+				<key>RemoteAddress</key>
+				<string>h.lv5.ac</string>
+				<key>SharedSecret</key>
+				<data>
+				cmFpbGd1bg==
+				</data>
+				<key>XAuthEnabled</key>
+				<integer>1</integer>
+				<key>XAuthName</key>
+				<string>{{username}}</string>
+				<key>XAuthPassword</key>
+				<string>{{password}}</string>
+			</dict>
+			<key>IPv4</key>
+			<dict>
+				<key>OverridePrimary</key>
+				<integer>1</integer>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures VPN settings</string>
+			<key>PayloadDisplayName</key>
+			<string>VPN</string>
+			<key>PayloadIdentifier</key>
+			<string>zh99998-macbook-pro.local.BBDE881E-C29E-45E1-822E-F1B574176E3F.com.apple.vpn.managed.2BABF090-733E-417E-AB18-19EDA7CA6E54</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed</string>
+			<key>PayloadUUID</key>
+			<string>2BABF090-733E-417E-AB18-19EDA7CA6E54</string>
+			<key>PayloadVersion</key>
+			<real>1</real>
+			<key>Proxies</key>
+			<dict/>
+			<key>UserDefinedName</key>
+			<string>Railgun</string>
+			<key>VPNType</key>
+			<string>IPSec</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Railgun profile for OSX</string>
+	<key>PayloadDisplayName</key>
+	<string>Railgun</string>
+	<key>PayloadIdentifier</key>
+	<string>zh99998-macbook-pro.local.BBDE881E-C29E-45E1-822E-F1B574176E3F</string>
+	<key>PayloadOrganization</key>
+	<string>Railgun</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>239226F6-5B4A-4CBC-B57B-1AAB64219549</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
