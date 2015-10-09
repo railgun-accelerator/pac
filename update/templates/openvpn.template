@@ -1,7 +1,7 @@
 client
 dev tun
 proto udp
-remote h.lv5.ac 69
+remote {{domain}} {{port}}
 resolv-retry 60
 nobind
 persist-key
@@ -57,5 +57,5 @@ odTvZy84IOgu/5ZR8LrYPZJwR2UcnnNytGAMXOLRc3bgr07i5TelRS+KIz6HxzDm
 MTh89N1SyvNTBCVXVmaU6Avu5gMUTu79bZRknl7OedSyps9AsUSoPocZXun4IRZZUw==
 -----END CERTIFICATE-----
 </ca>
-max-routes ${routes_count}
+max-routes ${count}
 ${routes}

@@ -1,0 +1,36 @@
+var direct = 'DIRECT';
+var proxy = 'HTTPS {{https_proxy}}; PROXY {{http_proxy}}';
+function FindProxyForURL(url, host) {
+    if (host.indexOf('.') === -1 || host.indexOf('.local', host.length - '.local'.length) !== -1) {
+        // bypass plain hostname and hostname with suffix ".local"
+        return direct;
+    } else if (/^[\d\.]+$/.test(host)) {
+        // plain ip address
+        var address = host.split('.');
+        address = (((((((parseInt(address[0])) << 8) | (parseInt(address[1]))) << 8) | (parseInt(address[2]))) << 8) | (parseInt(address[3]))) >>> 0;
+        for (var netmask in direct_addresses) {
+            if (direct_addresses.hasOwnProperty(netmask) && direct_addresses[netmask][(address & parseInt(netmask)) >>> 0]) {
+                return direct;
+            }
+        }
+        return proxy;
+    } else {
+        // normal domains
+        var level = host.split('.').length;
+        var i;
+        for (i = level; i > 0; i--) {
+            if (proxy_tree.hasOwnProperty(i) && proxy_tree[i][host.split('.').slice(level - i).join('.')]) {
+                return proxy;
+            }
+        }
+        if (direct_exact.hasOwnProperty(level) && direct_exact[level][host]) {
+            return direct;
+        }
+        for (i = level; i > 0; i--) {
+            if (direct_tree.hasOwnProperty(i) && direct_tree[i][host.split('.').slice(level - i).join('.')]) {
+                return direct;
+            }
+        }
+        return proxy;
+    }
+}
