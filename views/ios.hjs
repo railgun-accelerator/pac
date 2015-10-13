@@ -5,24 +5,56 @@
 	<key>PayloadContent</key>
 	<array>
 		<dict>
-			<key>IPSec</key>
+			<key>IKEv2</key>
 			<dict>
-				<key>AuthenticationMethod</key>
-				<string>SharedSecret</string>
-				<key>LocalIdentifierType</key>
-				<string>KeyID</string>
-				<key>RemoteAddress</key>
-                <string>{{host}}</string>
-				<key>SharedSecret</key>
-				<data>
-				cmFpbGd1bg==
-				</data>
-				<key>XAuthEnabled</key>
-				<integer>1</integer>
-				<key>XAuthName</key>
+				<key>AuthName</key>
 				<string>{{username}}</string>
-				<key>XAuthPassword</key>
+				<key>AuthPassword</key>
 				<string>{{password}}</string>
+				<key>AuthenticationMethod</key>
+				<string>Certificate</string>
+				<key>ChildSecurityAssociationParameters</key>
+				<dict>
+					<key>DiffieHellmanGroup</key>
+					<integer>2</integer>
+					<key>EncryptionAlgorithm</key>
+					<string>3DES</string>
+					<key>IntegrityAlgorithm</key>
+					<string>SHA1-96</string>
+					<key>LifeTimeInMinutes</key>
+					<integer>1440</integer>
+				</dict>
+				<key>DeadPeerDetectionRate</key>
+				<string>Medium</string>
+				<key>DisableMOBIKE</key>
+				<integer>0</integer>
+				<key>DisableRedirect</key>
+				<integer>0</integer>
+				<key>EnableCertificateRevocationCheck</key>
+				<integer>0</integer>
+				<key>EnablePFS</key>
+				<integer>0</integer>
+				<key>ExtendedAuthEnabled</key>
+				<true/>
+				<key>IKESecurityAssociationParameters</key>
+				<dict>
+					<key>DiffieHellmanGroup</key>
+					<integer>2</integer>
+					<key>EncryptionAlgorithm</key>
+					<string>3DES</string>
+					<key>IntegrityAlgorithm</key>
+					<string>SHA1-96</string>
+					<key>LifeTimeInMinutes</key>
+					<integer>1440</integer>
+				</dict>
+				<key>LocalIdentifier</key>
+				<string></string>
+				<key>RemoteAddress</key>
+				<string>fa{{host}}</string>
+				<key>RemoteIdentifier</key>
+				<string>{{host}}</string>
+				<key>UseConfigurationAttributeInternalIPSubnet</key>
+				<integer>0</integer>
 			</dict>
 			<key>IPv4</key>
 			<dict>
@@ -34,35 +66,44 @@
 			<key>PayloadDisplayName</key>
 			<string>VPN</string>
 			<key>PayloadIdentifier</key>
-			<string>zh99998-macbook-pro.local.BBDE881E-C29E-45E1-822E-F1B574176E3F.com.apple.vpn.managed.2BABF090-733E-417E-AB18-19EDA7CA6E54</string>
+			<string>com.apple.vpn.managed.A3724EB8-76C9-4133-8979-44572A91B316</string>
 			<key>PayloadType</key>
 			<string>com.apple.vpn.managed</string>
 			<key>PayloadUUID</key>
-			<string>2BABF090-733E-417E-AB18-19EDA7CA6E54</string>
+			<string>E0D0FCEC-87C0-4AFC-8F11-9997E80739AB</string>
 			<key>PayloadVersion</key>
 			<real>1</real>
-			<key>Proxies</key>
-			<dict/>
 			<key>UserDefinedName</key>
 			<string>Railgun</string>
 			<key>VPNType</key>
-			<string>IPSec</string>
+			<string>IKEv2</string>
+			<key>OnDemandEnabled</key>
+			<integer>1</integer>
+			<key>OnDemandRules</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>Connect</string>
+					<key>URLStringProbe</key>
+					<string>http://g.cn/generate_204</string>
+				</dict>
+			</array>
+			<key>VendorConfig</key>
+			<dict/>
 		</dict>
 	</array>
-	<key>PayloadDescription</key>
-	<string>Railgun profile for OSX</string>
 	<key>PayloadDisplayName</key>
 	<string>Railgun</string>
 	<key>PayloadIdentifier</key>
-	<string>zh99998-macbook-pro.local.BBDE881E-C29E-45E1-822E-F1B574176E3F</string>
+	<string>railgun.ac.ios</string>
 	<key>PayloadOrganization</key>
-	<string>Railgun</string>
+	<string>Railgun Accelerator</string>
 	<key>PayloadRemovalDisallowed</key>
 	<false/>
 	<key>PayloadType</key>
 	<string>Configuration</string>
 	<key>PayloadUUID</key>
-	<string>239226F6-5B4A-4CBC-B57B-1AAB64219549</string>
+	<string>91A57B68-8012-4491-8C26-94E2744FEB88</string>
 	<key>PayloadVersion</key>
 	<integer>1</integer>
 </dict>
