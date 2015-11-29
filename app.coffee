@@ -30,6 +30,12 @@ app.get /([a-z])(\d+)(-[-\w]*)?(\..+)?/, (req, res) ->
           res.type 'application/x-apple-aspen-config'
           res.end stdout
         openssl.stdin.end mobileconfig
+    when '.ovpn'
+      res.type 'application/x-openvpn-profile'
+      res.render 'openvpn'
+    when '.bat'
+      res.type 'application/octet-stream'
+      res.render 'windows'
     else
       dns.resolve req.params[0] + '.lv5.ac', (err, address, family) ->
         if err
