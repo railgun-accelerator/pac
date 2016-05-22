@@ -43,6 +43,4 @@ app.get /([a-z])(\d+)(-[-\w]*)?(\..+)?/, (req, res) ->
         res.type 'application/x-ns-proxy-autoconfig'
         res.render 'proxy', https_proxy: "#{domain}:#{port+1}", http_proxy: "#{address}:#{port}", http_proxy: "#{domain}:#{port}"
 
-if fs.existsSync '/var/run/railgun-profiles.sock'
-  fs.unlinkSync '/var/run/railgun-profiles.sock'
-app.listen '/var/run/railgun-profiles.sock'
+app.listen 3000
